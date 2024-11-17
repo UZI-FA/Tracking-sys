@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="assets/bootstrap-5.3.3-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/style.css">
 </head>
-<body style="background-color: blueviolet;">
+<body>
     <header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
@@ -27,30 +27,39 @@
           </nav>
     </header>
 
-    <div class="container-md border rounded bg-light mt-5 p-4" style="width: 35%;">
-        <h1 class="text-center" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
-            Login
+    <div class="container mt-4">
+        <h1>
+            Sistem Tracking Mahasiswa Dosen <br>
+            API Sevices
         </h1>
-        <div class="container mx-auto" style="width: 55%;">
-            <img src="<?=img('logo_proyek1.png')?>" alt="logo" width="200px">
+
+        <p class="h6 mt-4">
+            API Services ini dibuat untuk mendapatkan informasi lokasi dari <br>
+            Mahasiswa dan dosen
+        </p>
+
+        <button class="btn btn-warning btn-lg px-4 m-3">Login</button>
+        <button class="btn btn-success btn-lg px-4 m-3">Docs</button>
+
+        <img 
+        style="width: 600px; position: absolute; margin-top: -100px; margin-left: 240px; z-index: -2;box-shadow: 0px 5px 30px grey;"
+        src="<?= img('API-1.png') ?>" alt="API">
+    </div>
+    <div class="rounded-top p-4" style="background-color: #E79057;margin-top: 120px;">
+        <div class="container mt-5 mx-auto" style="width: 400px;">
+            <p class="h1 text-center">
+                <b>
+                    Efficiency starts with the right tools
+                </b>
+            </p>
+            <p class="h4 text-center">
+                awgabgaowigbknxoaiwbfa
+                iwbgoicoaibaigbknsaoiwanvoaiw
+            </p>
+            <div class="mt-4 mx-auto" style="width: 200px;">
+                <button type="button" class="btn btn-dark rounded btn-lg" style="width: 200px;">Get Started Now</button>
+            </div>
         </div>
-        <form class="mx-4">
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Email address</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1">
-            </div>
-            <!-- <div class="mb-3 form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Lupa Password</label>
-            </div> -->
-            <div class="d-grid gap-2">
-                <button class="btn btn-primary" type="button" style="border-radius: 20px;">Login</button>
-            </div>
-        </form>
     </div>
     <script src="assets/bootstrap-5.3.3-dist/js/bootstrap.min.js"></script>
 </body>

@@ -25,3 +25,8 @@ function view($dir = '', $data = []){
     $dir = str_replace('/','\\',$dir);
     require_once(str_replace('\\public','\\app\\views\\',getcwd()).$dir.'.php');
 }
+
+function redirect($url) {
+    header("Location: " . BASEURL.'/'.$dir);
+    exit;
+}

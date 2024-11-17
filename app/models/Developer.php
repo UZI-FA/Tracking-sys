@@ -1,8 +1,8 @@
 <?php
 require base().'\\app\\core\\Model.php';
 
-class Mahasiswa extends Model{
-    protected $table = 'tb_mahasiswa';
+class Developer extends Model{
+    protected $table = 'developer';
     
 
     // public function get(){

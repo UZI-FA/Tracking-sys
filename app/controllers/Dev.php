@@ -2,12 +2,17 @@
 require base()."\\app\\models\\User.php";
 
 // class Home extends Controller{
-class Home extends Controller{
+class Dev extends Controller{
 
     public function index(){
         // echo 'Controller Home';
+        $mhs =  new User();
+        $mhs->getAll();
+        
+        $data = [];
+        $data['satu'] = 'Nomor 1';
 
-        view('landing_page',$data);
+        view('dev/dashboard',$data);
     }
 
     public function show($satu = '78'){
