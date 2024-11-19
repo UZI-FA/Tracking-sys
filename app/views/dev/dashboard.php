@@ -3,8 +3,8 @@
     <div class="mt-4 container border rounded">
       <div class="container mt-2">
         <h2>
-          <strong id="api">API KEY : N9BV7wb9Vb9wbW</strong>
-          <img src="../imgs/copy.png" alt="" width="25px" class="ms-2 mb-3" onmouseleave="tooltip()">
+          <strong id="api">API KEY : <?= $data['api_key'] ?></strong>
+          <img src="<?= img('copy.png') ?>" alt="" width="20px" class="ms-2 mb-3" onmouseleave="tooltip()">
           <span class="tooltip" id="myTooltip">Copy to clipboard</span>
         </h2>
       </div>

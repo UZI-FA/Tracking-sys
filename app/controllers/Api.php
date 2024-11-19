@@ -3,7 +3,7 @@ require base()."\\app\\models\\Admin.php";
 require base()."\\app\\models\\Developer.php";
 
 // class Home extends Controller{
-class Login extends Controller{
+class Api extends Controller{
 
     public function index(){
         // echo 'Controller Home';

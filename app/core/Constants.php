@@ -17,6 +17,8 @@ function img($dir = ''){
     return BASEURL.'/img/'.$dir;
 }
 
+// define('BASEURL','http://localhost/Proyek1/Develop/public');
+
 function url($dir = ''){
     return BASEURL.'/'.$dir;
 }
@@ -27,6 +29,6 @@ function view($dir = '', $data = []){
 }
 
 function redirect($url) {
-    header("Location: " . BASEURL.'/'.$dir);
+    header("Location: " . BASEURL.'/'.$url);
     exit;
 }

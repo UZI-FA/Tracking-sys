@@ -19,10 +19,17 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mx-auto mb-2 mb-lg-0">
                   <li class="nav-item px-4">
-                    <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
+                    <a class="nav-link active" aria-current="page" href="<?= url('admin') ?>">Dashboard</a>
                   </li>
+                  <?= SESSION::get('role')=='admin' ? 
+                  '<li class="nav-item px-4">
+                    <a class="nav-link active" aria-current="page" href="'. url('admin/kelola') .'">Kelola</a>
+                  </li>' 
+                  : ''?>
                 </ul>
-                <button class="btn btn-danger " type="submit">Login</button>
+                <?= SESSION::has('id') ? 
+                '<button class="btn btn-danger " type="submit">Logout</button>' : 
+                '<button class="btn btn-danger " type="submit">Login</button>'?>
               </div>
             </div>
           </nav>

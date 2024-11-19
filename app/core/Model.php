@@ -28,12 +28,23 @@ class Model {
     }
     
     public static function get($attributes = '*', $where = null){
+        new Static;
         if ($where == null) {
             static::$db->query('SELECT '. $attributes .' FROM ' . static::$tbl);
         }else{
             static::$db->query('SELECT '. $attributes .' FROM ' . static::$tbl . ' WHERE ' . $where);
         }
         return static::$db->resultSet();
+    }
+    
+    public static function find($attributes = '*', $where = null){
+        new Static;
+        if ($where == null) {
+            static::$db->query('SELECT '. $attributes .' FROM ' . static::$tbl);
+        }else{
+            static::$db->query('SELECT '. $attributes .' FROM ' . static::$tbl . ' WHERE ' . $where);
+        }
+        return static::$db->single();
     }
 
     public static function delete($where){

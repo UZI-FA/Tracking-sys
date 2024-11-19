@@ -34,21 +34,21 @@
         <div class="container mx-auto" style="width: 55%;">
             <img src="<?=img('logo_proyek1.png')?>" alt="logo" width="200px">
         </div>
-        <form class="mx-4">
+        <form class="mx-4" method='POST' action='<?= url('login/login') ?>'>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Email address</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <input name='email' type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
             </div>
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1">
+                <input name='password' type="password" class="form-control" id="exampleInputPassword1">
             </div>
             <!-- <div class="mb-3 form-check">
                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
                 <label class="form-check-label" for="exampleCheck1">Lupa Password</label>
             </div> -->
             <div class="d-grid gap-2">
-                <button class="btn btn-primary" type="button" style="border-radius: 20px;">Login</button>
+                <button class="btn btn-primary" type="submit" style="border-radius: 20px;">Login</button>
             </div>
         </form>
     </div>

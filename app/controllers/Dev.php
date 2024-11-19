@@ -1,22 +1,20 @@
 <?php
-require base()."\\app\\models\\User.php";
+require base()."\\app\\models\\Developer.php";
 
 // class Home extends Controller{
 class Dev extends Controller{
 
+    public function __construct(){
+        SESSION::start();
+        if(!SESSION::has('id') || !(SESSION::get('role') == "dev")){
+            redirect('login');
+        }
+    }
+
     public function index(){
         // echo 'Controller Home';
-        $mhs =  new User();
-        $mhs->getAll();
-        
-        $data = [];
-        $data['satu'] = 'Nomor 1';
+        $data = Developer::find('api_key','id = "'.SESSION::get('id').'"');
 
         view('dev/dashboard',$data);
     }
-
-    public function show($satu = '78'){
-        echo 'Show Home : '.$satu;
-    }
-
 }

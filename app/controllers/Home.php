@@ -7,6 +7,9 @@ class Home extends Controller{
     public function index(){
         // echo 'Controller Home';
 
+        $data = [];
+        $data['satu'] = 'Nomor 1';
+
         view('landing_page',$data);
     }
 

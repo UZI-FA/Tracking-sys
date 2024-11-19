@@ -4,29 +4,41 @@ require base()."\\app\\models\\User.php";
 // class Home extends Controller{
 class Admin extends Controller{
 
+    public function __construct(){
+        SESSION::start();
+        if(!SESSION::has('id') || !(SESSION::get('role') == "admin")){
+            redirect('login');
+        }
+    }
+
     public function index(){
         // echo 'Controller Home';
         
         $mhs = User::getAll();
         
-        if (!empty($mhs)) {
-            foreach ($mhs as $u) {
-                // var_dump($u);
-                // print_r($u);
-                echo "Name: " . $u['nama'] . ", Email: " . $u['email'] . ", Phone: " . $u['no_telp'] . "\n";
-            }
-        } else {
-            echo "No users found in the database.";
-        }
+        // if (!empty($mhs)) {
+        //     foreach ($mhs as $u) {
+        //         // var_dump($u);
+        //         // print_r($u);
+        //         echo "Name: " . $u['nama'] . ", Email: " . $u['email'] . ", Phone: " . $u['no_telp'] . "\n";
+        //     }
+        // } else {
+        //     echo "No users found in the database.";
+        // }
         
         $data = [];
         $data['satu'] = 'Nomor 1';
 
-        // view('admin/dashboard',$data);
+        view('admin/dashboard',$data);
     }
 
     public function show($satu = '78'){
         echo 'Show Home : '.$satu;
+    }
+
+    public function kelola($role = null){
+        $data = User::getAll("role = '".$role."'");
+        view('admin/manage',$data);
     }
 
 }
