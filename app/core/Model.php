@@ -2,13 +2,16 @@
 
 class Model {
     protected $table;
+    protected $id = 'id';
     protected static $db;
     protected static $tbl;
     protected static $mod;
+    protected static $key;
 
     public function __construct(){
         static::$db = new Database;
         static::$tbl = $this->table;
+        static::$key = $this->id;
         
         // var_dump($this->db);
     }
@@ -47,11 +50,27 @@ class Model {
         return static::$db->single();
     }
 
+    public static function destroy($where){
+        new Static;
+        static::$db->query('DELETE FROM ' . static::$tbl . ' WHERE '. static::$key .'=' . $where);
+        static::$db->execute();
+    }
+
+    public static function insert($field,$value){
+        new Static;
+        static::$db->query('INSERT INTO ' . static::$tbl . ' ('. $field .') VALUES ('. $value .')');
+        static::$db->execute();
+    }
+
     public static function delete($where){
+        new Static;
         static::$db->query('DELETE FROM ' . static::$tbl . ' WHERE ' . $where);
+        static::$db->execute();
     }
 
     public static function update($set, $where){
+        new Static;
         static::$db->query('UPDATE ' . static::$tbl . ' SET ' . $set .' WHERE ' . $where);
+        static::$db->execute();
     }
 }

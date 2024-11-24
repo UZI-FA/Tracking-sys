@@ -14,7 +14,7 @@ class Admin extends Controller{
     public function index(){
         // echo 'Controller Home';
         
-        $mhs = User::getAll();
+        $data = User::getAll();
         
         // if (!empty($mhs)) {
         //     foreach ($mhs as $u) {
@@ -36,9 +36,34 @@ class Admin extends Controller{
         echo 'Show Home : '.$satu;
     }
 
-    public function kelola($role = null){
+    public function kelola($role = 'mahasiswa',$id=null){
+        if ($id != null) {
+            User::destroy($id);
+        }
+        if (isset($_POST['method'])) {
+            switch ($_POST['method']) {
+                case 'post':
+                    $nama = $_POST['nama'];
+                    $email = $_POST['email'];
+                    $telp = $_POST['telp'];
+
+                    User::insert('role,nama,email,no_telp','"'. $role .'","'. $nama .'","'. $email .'","'. $telp .'"');
+                    break;
+                case 'put':
+                    $id = $_POST['id'];
+                    $nama = $_POST['nama'];
+                    $email = $_POST['email'];
+
+                    User::update('nama="'.$nama.'" , email="'.$email.'"','id ="'.$id.'"');
+                    break;
+                
+                default:
+                    # code...
+                    break;
+            }
+        }
         $data = User::getAll("role = '".$role."'");
-        view('admin/manage',$data);
+        view('admin/manage',[$data,$role]);
     }
 
 }

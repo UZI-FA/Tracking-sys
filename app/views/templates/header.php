@@ -27,6 +27,7 @@
                   </li>' 
                   : ''?>
                 </ul>
+                <!-- <p class="text-end">End aligned text on all viewport sizes.</p> -->
                 <?= SESSION::has('id') ? 
                 '<button class="btn btn-danger " type="submit">Logout</button>' : 
                 '<button class="btn btn-danger " type="submit">Login</button>'?>
