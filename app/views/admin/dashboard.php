@@ -3,7 +3,7 @@
     <div class="mt-4 container">
         <div class="container bg-secondary row p-2">
           <div class="col-2">
-            <img src="../imgs/android-logo.png" alt="logo" width="70px">
+            <img src="<?=img('android-logo.png')?>" alt="logo" width="70px">
           </div>
           <div class="col">
             <p class="h2">Download Aplikasi Pemetaan Wifi</p>

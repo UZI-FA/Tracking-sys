@@ -34,7 +34,9 @@ class Login extends Controller{
     }
 
     public function logout(){
+        SESSION::start();
         SESSION::destroy();
+        return redirect('');
     }
 
 }

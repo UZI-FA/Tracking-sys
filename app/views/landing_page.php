@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index</title>
+    <title>Tracking</title>
+    <link rel="icon" href="<?=img('logo_proyek1.png')?>" type="image/icon type">
     <link rel="stylesheet" href="assets/bootstrap-5.3.3-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/style.css">
 </head>
@@ -11,7 +12,7 @@
     <header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
-              <a class="navbar-brand" href="#">Navbar</a>
+              <a class="navbar-brand" href="<?=url()?>">Navbar</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -21,7 +22,10 @@
                     <a class="nav-link active" aria-current="page" href="#">Home</a>
                   </li> -->
                 </ul>
-                <button class="btn btn-danger " type="submit">Login</button>
+                <?php SESSION::start() ?>
+                <?= SESSION::has('id') ? 
+                '<a href="'.url('login/logout').'" class="btn btn-danger " type="submit">Logout</a>' : 
+                '<a href="'.url('login').'" class="btn btn-danger " type="submit">Login</a>'?>
               </div>
             </div>
           </nav>
