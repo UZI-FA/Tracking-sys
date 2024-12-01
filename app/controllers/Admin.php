@@ -31,7 +31,7 @@ class Admin extends Controller{
         $data = [];
         $data['satu'] = 'Nomor 1';
 
-        view('admin/dashboard',$data);
+        view('admin/dashboard',$data,'Dashboard');
     }
 
     public function show($satu = '78'){
@@ -52,7 +52,7 @@ class Admin extends Controller{
                 $data = $this->user($role,$id);
                 break;
         }
-        view('admin/manage',[$data,$role]);
+        view('admin/manage',[$data,$role],'Kelola');
     }
 
     private function user($role,$id){
@@ -97,7 +97,7 @@ class Admin extends Controller{
             $telp = $_POST['telp'];
             $email = $_POST['email'];
             $password = $_POST['password'];
-            $api_key = '-';
+            $api_key = $this->generateApiKey();
             
             switch ($_POST['method']) {
                 case 'post':
@@ -142,6 +142,16 @@ class Admin extends Controller{
             }
         }
         return Wifi::getAll();
+    }
+
+    function generateApiKey($length = 32) {
+        // Generate random bytes
+        $randomBytes = random_bytes($length);
+        
+        // Convert to a secure hash
+        $apiKey = bin2hex($randomBytes);
+        
+        return $apiKey;
     }
 
 }

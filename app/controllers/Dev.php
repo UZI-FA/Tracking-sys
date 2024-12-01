@@ -15,6 +15,6 @@ class Dev extends Controller{
         // echo 'Controller Home';
         $data = Developer::find('api_key','id = "'.SESSION::get('id').'"');
 
-        view('dev/dashboard',$data);
+        view('dev/dashboard',$data,'Dashboard');
     }
 }

@@ -1,5 +1,4 @@
 <?php
-require base()."\\app\\models\\Admin.php";
 require base()."\\app\\models\\Developer.php";
 
 // class Home extends Controller{
@@ -8,29 +7,24 @@ class Api extends Controller{
     public function index(){
         // echo 'Controller Home';
 
-        view('login');
+        redirect('');
     }
 
-    public function login(){
-        $email = '"'.$_POST['email'].'"';
-        $password = $_POST['password'];
+    public function get($api_key = '-'){
 
-        $usr = Admin::find('id,password','email = ' . $email);
-        if($usr["password"] == $password){
-            SESSION::start();
-            SESSION::set('id',$usr["id"]);
-            SESSION::set('role',"admin");
-            return redirect('admin');
-        }
+        // $dev = Developer::find('id','api_key = "' . $api_key) . '"';
+
+        var_dump(empty($dev));
         
-        $usr = Developer::find('id,password','email = ' . $email);
-        if($usr["password"] == $password){
-            SESSION::start();
-            SESSION::set('id',$usr["id"]);
-            SESSION::set('role',"dev");
-            return redirect('dev');
-        }
-        return redirect('login');
+        $user = new stdClass();
+        $user->name = "John";
+        $user->age = 30;
+        $user->city = "New York";
+
+        $json = json_encode($user);
+
+        echo $json;
+
     }
 
     public function logout(){

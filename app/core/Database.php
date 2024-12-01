@@ -51,6 +51,7 @@ class Database {
     }
 
     public function execute(){
+        // var_dump($this->stmt);
         $this->stmt->execute();
     }
 

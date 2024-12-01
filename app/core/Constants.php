@@ -23,7 +23,7 @@ function url($dir = ''){
     return BASEURL.'/'.$dir;
 }
 
-function view($dir = '', $data = []){
+function view($dir = '', $data = [],$title = 'Tracking'){
     $dir = str_replace('/','\\',$dir);
     require_once(str_replace('\\public','\\app\\views\\',getcwd()).$dir.'.php');
 }
