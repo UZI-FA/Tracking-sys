@@ -9,7 +9,7 @@ class Admin extends Controller{
     public function __construct(){
         SESSION::start();
         if(!SESSION::has('id') || !(SESSION::get('role') == "admin")){
-            redirect('login');
+            redirect('auth');
         }
     }
 

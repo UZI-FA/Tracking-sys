@@ -3,12 +3,17 @@ require base()."\\app\\models\\Admin.php";
 require base()."\\app\\models\\Developer.php";
 
 // class Home extends Controller{
-class Login extends Controller{
+class Auth extends Controller{
 
     public function index(){
         // echo 'Controller Home';
 
         view('login');
+    }
+    public function register(){
+        // echo 'Controller Home';
+
+        view('register');
     }
 
     public function login(){

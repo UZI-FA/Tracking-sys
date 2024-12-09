@@ -24,8 +24,8 @@
                 </ul>
                 <?php SESSION::start() ?>
                 <?= SESSION::has('id') ? 
-                '<a href="'.url('login/logout').'" class="btn btn-danger " type="submit">Logout</a>' : 
-                '<a href="'.url('login').'" class="btn btn-danger " type="submit">Login</a>'?>
+                '<a href="'.url('auth/logout').'" class="btn btn-danger " type="submit">Logout</a>' : 
+                '<a href="'.url('auth').'" class="btn btn-danger " type="submit">Login</a>'?>
               </div>
             </div>
           </nav>
@@ -42,8 +42,8 @@
             Mahasiswa dan dosen
         </p>
 
-        <button class="btn btn-warning btn-lg px-4 m-3">Login</button>
-        <button class="btn btn-success btn-lg px-4 m-3">Docs</button>
+        <a href="<?= url('auth') ?>" class="btn btn-warning btn-lg px-4 m-3">Login</a>
+        <a href="<?= url('docs') ?>" class="btn btn-success btn-lg px-4 m-3">Docs</a>
 
         <img 
         style="width: 600px; position: absolute; margin-top: -100px; margin-left: 240px; z-index: -2;box-shadow: 0px 5px 30px grey;"

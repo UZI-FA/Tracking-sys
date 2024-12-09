@@ -29,8 +29,8 @@
                 </ul>
                 <!-- <p class="text-end">End aligned text on all viewport sizes.</p> -->
                 <?= SESSION::has('id') ? 
-                '<a href="'.url('login/logout').'" class="btn btn-danger " type="submit">Logout</a>' : 
-                '<a href="'.url('login').'" class="btn btn-danger " type="submit">Login</a>'?>
+                '<a href="'.url('auth/logout').'" class="btn btn-danger " type="submit">Logout</a>' : 
+                '<a href="'.url('auth').'" class="btn btn-danger " type="submit">Login</a>'?>
               </div>
             </div>
           </nav>

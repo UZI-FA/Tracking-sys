@@ -12,3 +12,5 @@ function tooltipped() {
     var tooltip = document.getElementById("myTooltip");
     tooltip.innerHTML = "Copy to clipboard";
   }
+
+  
